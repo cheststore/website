@@ -19,6 +19,12 @@ html(lang='en')
         link(href='https://fonts.googleapis.com/css?family=Varela+Round', rel='stylesheet')
         link(href='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i', rel='stylesheet')
 
+        // highlight.js
+        link(href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css", link rel="stylesheet")
+
+        // toastr
+        link(href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css",rel="stylesheet")
+
         // Core theme CSS (includes Bootstrap)
         link(href='css/styles.css', rel='stylesheet')
 
@@ -48,7 +54,7 @@ html(lang='en')
         header.masthead
             .container.d-flex.h-100.align-items-center
                 .mx-auto.text-center
-                    h1.mx-auto.my-0.text-uppercase chest.store
+                    h1.mx-auto.my-0.text-uppercase chest<br>.store
                     h2.text-black-50.mx-auto.mt-2.mb-5
                       | Open-source, lightweight, and hackable single pane of glass
                       | cloud object explorer &amp; git server
@@ -56,25 +62,62 @@ html(lang='en')
                     a.btn.btn-primary.js-scroll-trigger(
                       href='https://github.com/cheststore/chest.store#install',
                       target="_blank",
-                      rel="noopener noreferrer") Download and Use!
+                      rel="noopener noreferrer") Install
 
         // About
-        section#about.about-section.text-center
+        section#about.about-section
             .container
-                .row
-                    .col-lg-8.mx-auto
-                        h2.text-black.mb-4 Built with Bootstrap 4
-                        p.text-black-50
-                            | Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on 
-                            a(href='http://startbootstrap.com/template-overviews/grayscale/') the preview page
-                            | . The theme is open source, and you can use it for any purpose, personal or commercial.
-                img.img-fluid(src='assets/img/ipad.png', alt='')
+                .row.text-center
+                    .col-lg-6.mb-5.mb-lg-0
+                        h2.text-primary.mb-4 Single Pane of Glass
+                        p.text-black-50.mb-5
+                          | Use chest.store to serve as a single interface to manage all of your
+                          | files and objects regardless of the storage provider they live in. Do
+                          | you personally have files in Dropbox, but your company manages policies
+                          | in AWS S3 or GCS? With a single login you can manage both sets of
+                          | objects seamlessly!
+                        img.border.rounded.img-fluid(
+                          style="box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.14)"
+                          src="assets/img/cheststore-list-view.png")
+                    .col-lg-6.mb-lg-0
+                        h2.text-primary.mb-4
+                          | Host your own
+                          img(style="max-height: 40px",src='assets/img/git-logo-red.png', alt='')
+                          | server
+                        p.text-black-50.mb-4
+                            | Most users who have written any kind of software, particarly FOSS
+                            | have used git in some capacity. You've likely utilized Github or Gitlab
+                            | to host the source of truth for your code.
+                            | chest.store has a built in git server for you to
+                            | host your repositories for you and store in your cloud storage bucket(s),
+                            | effectively allowing you to host your own personal Github!
+                        pre.rounded.text-left(style="font-size: 0.65rem;")
+                          code.sh.p-2
+                            | $ git clone https://github.com/antirez/redis
+                            | $ cd redis
+                            | $ # `https://app.chest.store` below can be replaced with your chest.store server
+                            | $ git remote add chest https://app.chest.store/git/$YOUR_USERNAME/redis
+                            | $ git push chest master
+                            | $ # when prompted, authenticate with your chest.store username and password
+                //- img.img-fluid(src='assets/img/ipad.png', alt='')
 
         // Features
         section#features.projects-section.bg-light
             .container
                 // Featured Project Row
                 .row.align-items-center.no-gutters.mb-4.mb-lg-5
+                    .col-xl-4.col-lg-5
+                        .featured-text.text-center.text-lg-left
+                            h4 Cloud Storage Integrations
+                            p.text-black-50.mb-0
+                                | chest.store supports several of the largest cloud object storage
+                                | providers in the marketplace and we have plans of integrating
+                                | more. Easily add buckets &amp; directories you'd like to browse for
+                                | files from these vendors all in the same UI and 
+                                | manage version histories through automatically created and updated git repos.
+                                | We'd love to hear from you if there is a cloud storage vendor
+                                | chest.store does not currently support that you'd like to see
+                                | supported!
                     .col-xl-8.col-lg-7
                         div.card.bg-light.border-0
                           div.card-body
@@ -102,18 +145,6 @@ html(lang='en')
                               div.col-12.mb-3.mb-lg-0.small.text-primary
                                 div * Supports the file system where the chest.store server is installed.
                         //- img.img-fluid.mb-3.mb-lg-0(src='assets/img/bg-masthead.jpg', alt='')
-                    .col-xl-4.col-lg-5
-                        .featured-text.text-center.text-lg-left
-                            h4 Cloud Storage Integrations
-                            p.text-black-50.mb-0
-                                | chest.store supports several of the largest cloud object storage
-                                | providers in the marketplace and we have plans of integrating
-                                | more. Easily add buckets &amp; directories you'd like to browse for
-                                | files from these vendors all in the same UI and 
-                                | manage version histories through automatically created and updated git repos.
-                                | We'd love to hear from you if there is a cloud storage vendor
-                                | chest.store does not currently support that you'd like to see
-                                | supported!
                 // Project One Row
                 .row.justify-content-center.no-gutters.mb-5.mb-lg-0
                     .col-lg-6
@@ -122,7 +153,7 @@ html(lang='en')
                         .bg-yellow.text-center.h-100.project
                             .d-flex.h-100
                                 .project-text.w-100.my-auto.text-center.text-lg-left
-                                    h4.text-primary Single Pane of Glass
+                                    h4.text-primary Cloud Object Explorer
                                     p.mb-0.text-black
                                         | chest.store allows you to integrate all of your cloud storage buckets &amp; directories
                                         | into a single interface and browse, download, and upload objects, all the while
@@ -153,18 +184,18 @@ html(lang='en')
                     .col-md-10.col-lg-8.mx-auto.text-center
                         i.far.fa-paper-plane.fa-2x.mb-2.text-primary
                         h2.text-primary.mb-5 Subscribe to receive updates!
-                        form(action="https://formspree.io/mqkyqwze" method="POST")
+                        form#signup-form(action="https://formspree.io/mqkyqwze" method="POST")
                             div.form-group
-                              input#inputEmail.form-control(
+                              input#signup-email.form-control(
                                 type='email'
                                 name="email"
                                 placeholder='Enter email address...')
                             div.form-group
-                              textarea.form-control(
+                              textarea#signup-notes.form-control(
                                 name="notes"
                                 placeholder="Any additional information you'd like us to know?")
                             div.form-group.mb-0
-                              button.btn.btn-primary.mx-auto(type='submit') Subscribe
+                              button#signup-submit.btn.btn-primary.mx-auto(type='submit') Subscribe
 
         // Contact
         section.contact-section.bg-yellow
@@ -211,6 +242,12 @@ html(lang='en')
 
         // Third party plugin JS
         script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js')
+
+        // highlight.js
+        script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js")
+
+        // toastr
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js')
 
         // Core theme JS
         script(src='js/scripts.js')

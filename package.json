@@ -24,7 +24,9 @@
         "url": "https://github.com/cheststore/website.git"
     },
     "dependencies": {
-        "bootstrap": "4.5.0"
+        "bootstrap": "4.5.0",
+        "highlight.js": "^10.0.3",
+        "toastr": "^2.1.4"
     },
     "devDependencies": {
         "autoprefixer": "9.8.0",

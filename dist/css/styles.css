@@ -5,6 +5,114 @@
 * Licensed under MIT (https://github.com/BlackrockDigital/chest.store-website/blob/master/LICENSE)
 */
 /*!
+ * Agate by Taufik Nurrohman <https://github.com/taufik-nurrohman>
+ * ---------------------------------------------------------------
+ *
+ * #ade5fc
+ * #a2fca2
+ * #c6b4f0
+ * #d36363
+ * #fcc28c
+ * #fc9b9b
+ * #ffa
+ * #fff
+ * #333
+ * #62c8f3
+ * #888
+ *
+ */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #333;
+  color: white;
+}
+
+.hljs-name,
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-code,
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-tag {
+  color: #62c8f3;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #ade5fc;
+}
+
+.hljs-string,
+.hljs-bullet {
+  color: #a2fca2;
+}
+
+.hljs-type,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-quote,
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #ffa;
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet {
+  color: #d36363;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #fcc28c;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-code {
+  color: #888;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #c6b4f0;
+}
+
+.hljs-meta {
+  color: #fc9b9b;
+}
+
+.hljs-deletion {
+  background-color: #fc9b9b;
+  color: #333;
+}
+
+.hljs-addition {
+  background-color: #a2fca2;
+  color: #333;
+}
+
+.hljs a {
+  color: inherit;
+}
+
+.hljs a:focus,
+.hljs a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
@@ -10376,7 +10484,7 @@ body {
   font-size: 2.5rem;
   line-height: 2.5rem;
   letter-spacing: 0.8rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+  background: linear-gradient(rgba(0, 0, 0, 0.9), #ac145a);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
           background-clip: text;
@@ -10408,7 +10516,7 @@ body {
 }
 
 .about-section {
-  padding-top: 10rem;
+  padding-top: 6rem;
   background: linear-gradient(to bottom, #fbe122 0%, rgba(251, 225, 34, 0.9) 75%, #f8f9fa 100%);
 }
 .about-section p {
@@ -10423,8 +10531,8 @@ body {
 }
 @media (min-width: 992px) {
   .projects-section .featured-text {
-    padding: 0 0 0 2rem;
-    border-left: 0.5rem solid #ac145a;
+    padding: 0 2rem 0 0;
+    border-right: 0.5rem solid #ac145a;
   }
 }
 .projects-section .project-text {
@@ -10505,4 +10613,8 @@ body {
 
 .footer {
   padding: 5rem 0;
+}
+
+pre {
+  margin-bottom: 0px;
 }

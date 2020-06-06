@@ -1,3 +1,6 @@
+// highlight.js style
+@import "./agate";
+
 // Import variables
 @import "./variables.scss";
 
@@ -18,3 +21,7 @@
 @import "./sections/signup.scss";
 @import "./sections/contact.scss";
 @import "./sections/footer.scss";
+
+pre {
+    margin-bottom: 0px;
+}

@@ -12,6 +12,10 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- highlight.js-->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css" link rel="stylesheet" />
+        <!-- toastr-->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
@@ -36,22 +40,33 @@
         <header class="masthead">
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">chest.store</h1>
+                    <h1 class="mx-auto my-0 text-uppercase">chest<br />.store</h1>
                     <h2 class="text-black-50 mx-auto mt-2 mb-5">Open-source, lightweight, and hackable single pane of glass cloud object explorer &amp; git server</h2>
-                    <a class="btn btn-primary js-scroll-trigger" href="https://github.com/cheststore/chest.store#install" target="_blank" rel="noopener noreferrer">Download and Use!</a>
+                    <a class="btn btn-primary js-scroll-trigger" href="https://github.com/cheststore/chest.store#install" target="_blank" rel="noopener noreferrer">Install</a>
                 </div>
             </div>
         </header>
         <!-- About-->
-        <section class="about-section text-center" id="about">
+        <section class="about-section" id="about">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="text-black mb-4">Built with Bootstrap 4</h2>
-                        <p class="text-black-50">Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
+                <div class="row text-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <h2 class="text-primary mb-4">Single Pane of Glass</h2>
+                        <p class="text-black-50 mb-5">Use chest.store to serve as a single interface to manage all of your files and objects regardless of the storage provider they live in. Do you personally have files in Dropbox, but your company manages policies in AWS S3 or GCS? With a single login you can manage both sets of objects seamlessly!</p>
+                        <img class="border rounded img-fluid" style="box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.14);" src="assets/img/cheststore-list-view.png" />
+                    </div>
+
+                    <div class="col-lg-6 mb-lg-0">
+                        <h2 class="text-primary mb-4">Host your own<img style="max-height: 40px;" src="assets/img/git-logo-red.png" alt="" />server</h2>
+                        <p class="text-black-50 mb-4">Most users who have written any kind of software, particarly FOSS have used git in some capacity. You've likely utilized Github or Gitlab to host the source of truth for your code. chest.store has a built in git server for you to host your repositories for you and store in your cloud storage bucket(s), effectively allowing you to host your own personal Github!</p>
+                        <pre class="rounded text-left" style="font-size: 0.65rem;"><code class="sh p-2">$ git clone https://github.com/antirez/redis
+$ cd redis
+$ # `https://app.chest.store` below can be replaced with your chest.store server
+$ git remote add chest https://app.chest.store/git/$YOUR_USERNAME/redis
+$ git push chest master
+$ # when prompted, authenticate with your chest.store username and password</code></pre>
                     </div>
                 </div>
-                <img class="img-fluid" src="assets/img/ipad.png" alt="" />
             </div>
         </section>
         <!-- Features-->
@@ -59,6 +74,12 @@
             <div class="container">
                 <!-- Featured Project Row-->
                 <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Cloud Storage Integrations</h4>
+                            <p class="text-black-50 mb-0">chest.store supports several of the largest cloud object storage providers in the marketplace and we have plans of integrating more. Easily add buckets &amp; directories you'd like to browse for files from these vendors all in the same UI and manage version histories through automatically created and updated git repos. We'd love to hear from you if there is a cloud storage vendor chest.store does not currently support that you'd like to see supported!</p>
+                        </div>
+                    </div>
                     <div class="col-xl-8 col-lg-7">
                         <div class="card bg-light border-0">
                             <div class="card-body">
@@ -100,12 +121,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Cloud Storage Integrations</h4>
-                            <p class="text-black-50 mb-0">chest.store supports several of the largest cloud object storage providers in the marketplace and we have plans of integrating more. Easily add buckets &amp; directories you'd like to browse for files from these vendors all in the same UI and manage version histories through automatically created and updated git repos. We'd love to hear from you if there is a cloud storage vendor chest.store does not currently support that you'd like to see supported!</p>
-                        </div>
-                    </div>
                 </div>
                 <!-- Project One Row-->
                 <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
@@ -114,7 +129,7 @@
                         <div class="bg-yellow text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-primary">Single Pane of Glass</h4>
+                                    <h4 class="text-primary">Cloud Object Explorer</h4>
                                     <p class="mb-0 text-black">chest.store allows you to integrate all of your cloud storage buckets &amp; directories into a single interface and browse, download, and upload objects, all the while automatically saving object version histories using a built-in git server.</p>
                                     <hr class="d-none d-lg-block mb-0 mr-0" />
                                 </div>
@@ -149,10 +164,10 @@
                     <div class="col-md-10 col-lg-8 mx-auto text-center">
                         <i class="far fa-paper-plane fa-2x mb-2 text-primary"></i>
                         <h2 class="text-primary mb-5">Subscribe to receive updates!</h2>
-                        <form action="https://formspree.io/mqkyqwze" method="POST">
-                            <div class="form-group"><input class="form-control" id="inputEmail" type="email" name="email" placeholder="Enter email address..." /></div>
-                            <div class="form-group"><textarea class="form-control" name="notes" placeholder="Any additional information you'd like us to know?"></textarea></div>
-                            <div class="form-group mb-0"><button class="btn btn-primary mx-auto" type="submit">Subscribe</button></div>
+                        <form id="signup-form" action="https://formspree.io/mqkyqwze" method="POST">
+                            <div class="form-group"><input class="form-control" id="signup-email" type="email" name="email" placeholder="Enter email address..." /></div>
+                            <div class="form-group"><textarea class="form-control" id="signup-notes" name="notes" placeholder="Any additional information you'd like us to know?"></textarea></div>
+                            <div class="form-group mb-0"><button class="btn btn-primary mx-auto" id="signup-submit" type="submit">Subscribe</button></div>
                         </form>
                     </div>
                 </div>
@@ -205,6 +220,10 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- highlight.js-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+        <!-- toastr-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
