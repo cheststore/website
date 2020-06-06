@@ -1,0 +1,12 @@
+.about-section {
+    padding-top: 10rem;
+    background: linear-gradient(
+        to bottom,
+        $yellow 0%,
+        #{fade-out($yellow, 0.1)} 75%,
+        #{fade-out($light, 0)} 100%
+    );
+    p {
+        margin-bottom: 5rem;
+    }
+}

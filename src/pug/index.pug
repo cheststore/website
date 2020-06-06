@@ -1,0 +1,216 @@
+doctype html
+html(lang='en')
+
+    head
+
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description', content='')
+        meta(name='author', content='')
+
+        title chest.store
+
+        link(rel='icon', type='image/x-icon', href='assets/img/favicon.ico')
+
+        // Font Awesome icons (free version)
+        script(src='https://use.fontawesome.com/releases/v5.13.0/js/all.js', crossorigin='anonymous')
+
+        // Google fonts
+        link(href='https://fonts.googleapis.com/css?family=Varela+Round', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i', rel='stylesheet')
+
+        // Core theme CSS (includes Bootstrap)
+        link(href='css/styles.css', rel='stylesheet')
+
+    body#page-top
+
+        // Navigation
+        nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
+            .container
+                a.navbar-brand.js-scroll-trigger(href='#page-top')
+                  //- img.img-fluid(style="max-width: 50px;",src='assets/img/logo-square-gray.png', alt='')
+                  | chest.store
+                button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+                    i.fas.fa-bars
+                #navbarResponsive.collapse.navbar-collapse
+                    ul.navbar-nav.ml-auto
+                        li.nav-item
+                            a.nav-link.js-scroll-trigger(href='#about') About
+                        li.nav-item
+                            a.nav-link.js-scroll-trigger(href='#features') Features
+                        li.nav-item
+                            a.nav-link.js-scroll-trigger(href='#signup') Contact
+                        li.nav-item
+                            a.nav-link.js-scroll-trigger(href='https://github.com/cheststore',target="_blank",rel="noopener noreferrer")
+                              i.fab.fa-github
+
+        // Masthead
+        header.masthead
+            .container.d-flex.h-100.align-items-center
+                .mx-auto.text-center
+                    h1.mx-auto.my-0.text-uppercase chest.store
+                    h2.text-black-50.mx-auto.mt-2.mb-5
+                      | Open-source, lightweight, and hackable single pane of glass
+                      | cloud object explorer &amp; git server
+                    //- a.btn.btn-primary.js-scroll-trigger(href='#about') Check it out!
+                    a.btn.btn-primary.js-scroll-trigger(
+                      href='https://github.com/cheststore/chest.store#install',
+                      target="_blank",
+                      rel="noopener noreferrer") Download and Use!
+
+        // About
+        section#about.about-section.text-center
+            .container
+                .row
+                    .col-lg-8.mx-auto
+                        h2.text-black.mb-4 Built with Bootstrap 4
+                        p.text-black-50
+                            | Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on 
+                            a(href='http://startbootstrap.com/template-overviews/grayscale/') the preview page
+                            | . The theme is open source, and you can use it for any purpose, personal or commercial.
+                img.img-fluid(src='assets/img/ipad.png', alt='')
+
+        // Features
+        section#features.projects-section.bg-light
+            .container
+                // Featured Project Row
+                .row.align-items-center.no-gutters.mb-4.mb-lg-5
+                    .col-xl-8.col-lg-7
+                        div.card.bg-light.border-0
+                          div.card-body
+                            div.row
+                              div.col-md-6.mb-3
+                                div.card
+                                  div.card-body.p-3.d-flex.flex-column.align-items-center
+                                    img.img-fluid.vendor(src='assets/img/aws_logo.png', alt='')
+                                    div.text-primary AWS S3
+                              div.col-md-6.mb-3
+                                div.card
+                                  div.card-body.p-3.d-flex.flex-column.align-items-center
+                                    img.img-fluid.vendor(src='assets/img/google_cloud.png', alt='')
+                                    div.text-primary Google Cloud Storage
+                              div.col-md-6.mb-3
+                                div.card
+                                  div.card-body.p-3.d-flex.flex-column.align-items-center
+                                    img.img-fluid.vendor(src='assets/img/dropbox_logo.png', alt='')
+                                    div.text-primary Dropbox
+                              div.col-md-6.mb-3
+                                div.card
+                                  div.card-body.p-3.d-flex.flex-column.align-items-center
+                                    img.img-fluid.vendor(src='assets/img/file_system.webp', alt='')
+                                    div.text-primary Local File System*
+                              div.col-12.mb-3.mb-lg-0.small.text-primary
+                                div * Supports the file system where the chest.store server is installed.
+                        //- img.img-fluid.mb-3.mb-lg-0(src='assets/img/bg-masthead.jpg', alt='')
+                    .col-xl-4.col-lg-5
+                        .featured-text.text-center.text-lg-left
+                            h4 Cloud Storage Integrations
+                            p.text-black-50.mb-0
+                                | chest.store supports several of the largest cloud object storage
+                                | providers in the marketplace and we have plans of integrating
+                                | more. Easily add buckets &amp; directories you'd like to browse for
+                                | files from these vendors all in the same UI and 
+                                | manage version histories through automatically created and updated git repos.
+                                | We'd love to hear from you if there is a cloud storage vendor
+                                | chest.store does not currently support that you'd like to see
+                                | supported!
+                // Project One Row
+                .row.justify-content-center.no-gutters.mb-5.mb-lg-0
+                    .col-lg-6
+                        img.img-fluid(src='assets/img/integrations-gray.jpg', alt='')
+                    .col-lg-6
+                        .bg-yellow.text-center.h-100.project
+                            .d-flex.h-100
+                                .project-text.w-100.my-auto.text-center.text-lg-left
+                                    h4.text-primary Single Pane of Glass
+                                    p.mb-0.text-black
+                                        | chest.store allows you to integrate all of your cloud storage buckets &amp; directories
+                                        | into a single interface and browse, download, and upload objects, all the while
+                                        | automatically saving object version histories using a built-in git server.
+                                    hr.d-none.d-lg-block.mb-0.mr-0
+                // Project Two Row
+                .row.justify-content-center.no-gutters
+                    .col-lg-6.border(style="box-shadow: inset 0 0px 8px 0 rgba(0, 0, 0, 0.14);")
+                        img.img-fluid(src='assets/img/git-logo-red.png', alt='')
+                    .col-lg-6.order-lg-first
+                        .bg-yellow.text-center.h-100.project
+                            .d-flex.h-100
+                                .project-text.w-100.my-auto.text-center.text-lg-right
+                                    h4.text-primary Git Integration
+                                    p.mb-0.text-black
+                                        | chest.store has a built in git server and client that is used primarily
+                                        | to update and store object version histories in managed repos per object.
+                                        | These repos can be cloned, pulled, pushed, etc. just like any git repo that
+                                        | you're used to today!
+                                        | <br><br>
+                                        | #[strong As a bonus, the git server can be used like any other git remote (think Github, Gitlab, etc.)!]
+                                    hr.d-none.d-lg-block.mb-0.ml-0
+
+        // Signup
+        section#signup.signup-section
+            .container
+                .row
+                    .col-md-10.col-lg-8.mx-auto.text-center
+                        i.far.fa-paper-plane.fa-2x.mb-2.text-primary
+                        h2.text-primary.mb-5 Subscribe to receive updates!
+                        form(action="https://formspree.io/mqkyqwze" method="POST")
+                            div.form-group
+                              input#inputEmail.form-control(
+                                type='email'
+                                name="email"
+                                placeholder='Enter email address...')
+                            div.form-group
+                              textarea.form-control(
+                                name="notes"
+                                placeholder="Any additional information you'd like us to know?")
+                            div.form-group.mb-0
+                              button.btn.btn-primary.mx-auto(type='submit') Subscribe
+
+        // Contact
+        section.contact-section.bg-yellow
+            .container
+                .row
+                    .col-md-4.mb-3.mb-md-0
+                        .card.py-4.h-100
+                            .card-body.text-center
+                                i.fas.fa-map-marked-alt.text-primary.mb-2
+                                h4.text-uppercase.m-0 Address
+                                hr.my-4
+                                .small.text-black-50 Atlanta, GA
+                    .col-md-4.mb-3.mb-md-0
+                        .card.py-4.h-100
+                            .card-body.text-center
+                                i.fas.fa-envelope.text-primary.mb-2
+                                h4.text-uppercase.m-0 Email
+                                hr.my-4
+                                .small.text-black-50
+                                    a(href='mailto:hello@chest.store') hello@chest.store
+                    .col-md-4.mb-3.mb-md-0
+                        .card.py-4.h-100
+                            .card-body.text-center
+                                i.fas.fa-mobile-alt.text-primary.mb-2
+                                h4.text-uppercase.m-0 Phone
+                                hr.my-4
+                                .small.text-black-50 Coming Soon
+                .social.d-flex.justify-content-center
+                    //- a.mx-2(href='#!',target="_blank",rel="noopener noreferrer")
+                    //-     i.fab.fa-twitter
+                    //- a.mx-2(href='#!',target="_blank",rel="noopener noreferrer")
+                    //-     i.fab.fa-facebook-f
+                    a.mx-2(href='https://github.com/cheststore',target="_blank",rel="noopener noreferrer")
+                        i.fab.fa-github
+
+        // Footer
+        footer.footer.bg-yellow.small.text-center.text-primary
+            .container
+                | Copyright © chest.store 2020
+
+        // Bootstrap core JS
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js')
+
+        // Third party plugin JS
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js')
+
+        // Core theme JS
+        script(src='js/scripts.js')

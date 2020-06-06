@@ -1,0 +1,19 @@
+// Override Bootstrap color system
+
+$light: #f8f9fa;
+$teal: #64a19d;
+$black: #000000;
+$maroon: #ac145a;
+$secondary: #c75c46;
+$yellow: #fbe122;
+
+// Override Bootstrap default state colors
+
+$primary: $maroon;
+
+// Add colors to the color map
+
+$theme-colors: (
+    "black": $black,
+    "yellow": $yellow,
+);
