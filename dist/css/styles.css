@@ -10618,3 +10618,9 @@ body {
 pre {
   margin-bottom: 0px;
 }
+
+@media (min-width: 768px) {
+  .logo-main {
+    max-width: 25vw;
+  }
+}
