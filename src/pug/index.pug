@@ -34,8 +34,7 @@ html(lang='en')
         nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
             .container
                 a.navbar-brand.js-scroll-trigger(href='#page-top')
-                  //- img.img-fluid(style="max-width: 50px;",src='assets/img/logo-square-gray.png', alt='')
-                  | chest.store
+                  img.img-fluid(style="max-width: 50px;",src='assets/img/cheststore-color.png', alt='')
                 button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
                     i.fas.fa-bars
                 #navbarResponsive.collapse.navbar-collapse
@@ -54,8 +53,9 @@ html(lang='en')
         header.masthead
             .container.d-flex.h-100.align-items-center
                 .mx-auto.text-center
-                    h1.mx-auto.my-0.text-uppercase chest<br>.store
-                    h2.text-black-50.mx-auto.mt-2.mb-5
+                    h1.mx-auto.my-0.text-uppercase
+                      img.img-fluid(style="max-width:25vw",src="assets/img/cheststore-color-full.png")
+                    h2.text-black-50.mx-auto.my-5
                       | Open-source, lightweight, and hackable single pane of glass
                       | cloud object explorer &amp; git server
                     //- a.btn.btn-primary.js-scroll-trigger(href='#about') Check it out!
@@ -85,7 +85,7 @@ html(lang='en')
                           img(style="max-height: 40px",src='assets/img/git-logo-red.png', alt='')
                           | server
                         p.text-black-50.mb-4
-                            | Most users who have written any kind of software, particarly FOSS
+                            | Most users who have written any kind of software, particularly FOSS
                             | have used git in some capacity. You've likely utilized Github or Gitlab
                             | to host the source of truth for your code.
                             | chest.store has a built in git server for you to
