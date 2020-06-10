@@ -10424,7 +10424,7 @@ body {
   }
   #mainNav .nav-link {
     transition: none;
-    padding: 2rem 1.5rem;
+    padding: 2rem 1rem;
     color: rgba(172, 20, 90, 0.7);
   }
   #mainNav .nav-link:hover {
@@ -10441,7 +10441,7 @@ body {
   }
   #mainNav.navbar-shrink .nav-link {
     color: #000000;
-    padding: 1.5rem 1.5rem 1.25rem;
+    padding: 1.5rem 1rem 1.25rem;
     border-bottom: 0.25rem solid transparent;
   }
   #mainNav.navbar-shrink .nav-link:hover {
@@ -10473,7 +10473,7 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(251, 225, 34, 0.3) 0%, rgba(251, 225, 34, 0.7) 75%, #fbe122 100%), url("../assets/img/chest-white-t.jpg");
+  background: linear-gradient(to bottom, rgba(251, 225, 34, 0.3) 0%, rgba(251, 225, 34, 0.7) 75%, #fbe122 100%), url("../assets/img/chest-white-t-vendors.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10502,7 +10502,7 @@ body {
 @media (min-width: 992px) {
   .masthead {
     height: 100vh;
-    padding: 0;
+    padding: 5rem 0 0 0;
   }
   .masthead h1 {
     font-size: 6.5rem;
@@ -10516,15 +10516,24 @@ body {
 }
 
 .about-section {
-  padding-top: 6rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
   background: linear-gradient(to bottom, #fbe122 0%, rgba(251, 225, 34, 0.9) 75%, #f8f9fa 100%);
 }
 .about-section p {
   margin-bottom: 5rem;
 }
 
+.use-case-section {
+  padding: 5rem 0rem;
+}
+
+.try-section {
+  padding: 4rem 0rem;
+}
+
 .projects-section {
-  padding: 10rem 0;
+  padding: 8rem 0;
 }
 .projects-section .featured-text {
   padding: 2rem;

@@ -42,9 +42,15 @@ html(lang='en')
                         li.nav-item
                             a.nav-link.js-scroll-trigger(href='#about') About
                         li.nav-item
+                            a.nav-link.js-scroll-trigger(href='#use-cases') Use Cases
+                        li.nav-item
                             a.nav-link.js-scroll-trigger(href='#features') Features
                         li.nav-item
+                            a.nav-link.js-scroll-trigger(href='#try') Try it Out!
+                        li.nav-item
                             a.nav-link.js-scroll-trigger(href='#signup') Contact
+                        li.nav-item
+                            a.nav-link.js-scroll-trigger(href='https://blog.chest.store',target="_blank",rel="noopener noreferrer") Blog
                         li.nav-item
                             a.nav-link.js-scroll-trigger(href='https://github.com/cheststore',target="_blank",rel="noopener noreferrer")
                               i.fab.fa-github
@@ -60,7 +66,7 @@ html(lang='en')
                       | cloud object explorer &amp; git server
                     //- a.btn.btn-primary.js-scroll-trigger(href='#about') Check it out!
                     a.btn.btn-primary.js-scroll-trigger(
-                      href='https://github.com/cheststore/chest.store#install',
+                      href='https://github.com/cheststore/chest.store/blob/master/README.md#install',
                       target="_blank",
                       rel="noopener noreferrer") Install
 
@@ -69,20 +75,18 @@ html(lang='en')
             .container
                 .row.text-center
                     .col-lg-6.mb-5.mb-lg-0
-                        h2.text-primary.mb-4 Cloud Object Explorer
+                        h2.text-primary.mb-4 Object Explorer
                         p.text-black-50.mb-5
                           | Use chest.store to serve as a single interface to manage all of your
                           | files and objects regardless of the storage provider they live in. Do
                           | you personally have files in Dropbox, but your company manages policies
-                          | in AWS S3 or GCS? With a single login you can manage both sets of
-                          | objects seamlessly!
+                          | in AWS S3 or GCS? With a single login you can manage all your files seamlessly.
                         img.border.rounded.img-fluid(
                           style="box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.14)"
-                          src="assets/img/cheststore-list-view.png")
+                          src="assets/img/app-ex1-objexp.png")
                     .col-lg-6.mb-lg-0
                         h2.text-primary.mb-4
-                          | Host your own
-                          img(style="max-height: 40px",src='assets/img/git-logo-red.png', alt='')
+                          img(style="max-height: 40px" class="mx-2" src='assets/img/git-logo-red.png', alt='')
                           | server
                         p.text-black-50.mb-4
                             | Most users who have written any kind of software, particularly FOSS
@@ -90,7 +94,7 @@ html(lang='en')
                             | to host the source of truth for your code.
                             | chest.store has a built in git server for you to
                             | host your repositories for you and store in your cloud storage bucket(s),
-                            | effectively allowing you to host your own personal Github!
+                            | effectively allowing you to host your own personal Github.
                         pre.rounded.text-left(style="font-size: 0.65rem;")
                           code.sh.p-2
                             | $ git clone https://github.com/antirez/redis
@@ -101,8 +105,28 @@ html(lang='en')
                             | $ # when prompted, authenticate with your chest.store username and password
                 //- img.img-fluid(src='assets/img/ipad.png', alt='')
 
+        // Use Cases
+        section#use-cases.use-case-section.bg-light
+          .container.text-center
+              div.row
+                  div.col-lg-6.mb-4
+                      h4.text-success #[i.fa.fa-check-circle] Good Use Cases
+                      ul.text-left.mb-0
+                          li Easily browse objects/files in buckets between multiple cloud storage providers
+                          li Have a way to update files in the cloud and easily track changes to files via git repos and standard commands (i.e. <code>git log</code>)
+                          li Host your own git server for you and/or your team and control where your code lives
+                          li Have a place to easily create public links for others to access/download individual files and optionally password protect or expire them
+                          li Have a way to interact with buckets &amp; objects/files across providers easily through <a href='https://github.com/cheststore/chest.store-cli' target="_blank" rel="noopener noreferrer">a CLI</a>
+                          li Have a solution to easily query and pull down files from cloud providers to slack (slackbot coming soon)
+                  div.col-lg-6.mb-4
+                      h4.text-danger #[i.fa.fa-times-circle] Poor Use Cases
+                      ul.text-left.mb-0
+                          li Sync buckets with tens of millions+ log files to try and run full text search against
+                          li Integrate buckets across cloud providers with tens of millions+ objects to run ML jobs against
+                          li Stream movies from files that live in cloud storage
+        
         // Features
-        section#features.projects-section.bg-light
+        section#features.projects-section
             .container
                 // Featured Project Row
                 .row.align-items-center.no-gutters.mb-4.mb-lg-5
@@ -117,9 +141,9 @@ html(lang='en')
                                 | manage version histories through automatically created and updated git repos.
                                 | We'd love to hear from you if there is a cloud storage vendor
                                 | chest.store does not currently support that you'd like to see
-                                | supported!
+                                | supported.
                     .col-xl-8.col-lg-7
-                        div.card.bg-light.border-0
+                        div.card.border-0
                           div.card-body
                             div.row
                               div.col-md-6.mb-3
@@ -161,7 +185,7 @@ html(lang='en')
                                     hr.d-none.d-lg-block.mb-0.mr-0
                 // Project Two Row
                 .row.justify-content-center.no-gutters
-                    .col-lg-6.border(style="box-shadow: inset 0 0px 8px 0 rgba(0, 0, 0, 0.14);")
+                    .col-lg-6.border.d-flex.align-items-center.p-5(style="box-shadow: inset 0 0px 8px 0 rgba(0, 0, 0, 0.14);")
                         img.img-fluid(src='assets/img/git-logo-red.png', alt='')
                     .col-lg-6.order-lg-first
                         .bg-yellow.text-center.h-100.project
@@ -172,10 +196,41 @@ html(lang='en')
                                         | chest.store has a built in git server and client that is used primarily
                                         | to update and store object version histories in managed repos per object.
                                         | These repos can be cloned, pulled, pushed, etc. just like any git repo that
-                                        | you're used to today!
+                                        | you're used to today.
                                         | <br><br>
                                         | #[strong As a bonus, the git server can be used like any other git remote (think Github, Gitlab, etc.)!]
                                     hr.d-none.d-lg-block.mb-0.ml-0
+
+        // Try it Out
+        section#try.try-section.bg-light
+            .container
+                .row
+                    .col-lg-6.mx-auto
+                        .card
+                            .card-body.text-center
+                                h2.text-primary Try it Out!
+                                div
+                                  | Feel free to use the following test instance and credentials
+                                  | to login and poke around before needing to commit any time
+                                  | into installing and/or integrating your own buckets with your
+                                  | own instance.
+                                div.d-flex.justify-content-center
+                                  div.alert.alert-success.my-2
+                                    div URL: #[strong #[a(href="http://test.chest.store",target="_blank",rel="noopener noreferrer") http://test.chest.store]]
+                                    div Username: #[strong test] 
+                                    div Password: #[strong test] 
+                                div.small
+                                  div.my-3
+                                    strong
+                                      | P.S. This instance's database #[a(href="https://github.com/cheststore/wipe-test",target="_blank",rel="noopener noreferrer") resets every few hours], so keep
+                                      | in mind any uploads or git pushes you make will be wiped clean
+                                      | at each refresh.
+                                  div
+                                    i
+                                      | P.P.S. This test instance is running on a t2.micro in AWS, so could
+                                      | easily get overloaded if too many people are in it at once. I'll do
+                                      | my best to keep this up, running, and healthy at all times and will upgrade
+                                      | to a bigger instance if traffic consistently stays high.
 
         // Signup
         section#signup.signup-section
@@ -248,6 +303,9 @@ html(lang='en')
 
         // toastr
         script(src='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js')
+
+        // google analytics
+        script(async,src="https://www.googletagmanager.com/gtag/js?id=UA-169004081-1")
 
         // Core theme JS
         script(src='js/scripts.js')

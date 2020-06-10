@@ -10,7 +10,7 @@
             #{fade-out($yellow, 0.3)} 75%,
             $yellow 100%
         ),
-        url("../assets/img/chest-white-t.jpg");
+        url("../assets/img/chest-white-t-vendors.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -40,7 +40,7 @@
     }
     @include media-breakpoint-up(lg) {
         height: 100vh;
-        padding: 0;
+        padding: 5rem 0 0 0;
         h1 {
             font-size: 6.5rem;
             line-height: 6.5rem;
