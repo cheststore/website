@@ -62,7 +62,7 @@
                     <div class="col-lg-6 mb-lg-0">
                         <h2 class="text-primary mb-4"><img class="mx-2" style="max-height: 40px;" src="assets/img/git-logo-red.png" alt="" />server</h2>
                         <p class="text-black-50 mb-4">Most users who have written any kind of software, particularly FOSS have used git in some capacity. You've likely utilized Github or Gitlab to host the source of truth for your code. chest.store has a built in git server for you to host your repositories for you and store in your cloud storage bucket(s), effectively allowing you to host your own personal Github.</p>
-                        <pre class="rounded text-left" style="font-size: 0.65rem;"><code class="sh p-2">$ git clone https://github.com/antirez/redis
+                        <pre class="rounded text-left" style="font-size: 0.65rem;"><code class="sh p-3">$ git clone https://github.com/antirez/redis
 $ cd redis
 $ # `https://app.chest.store` below can be replaced with your chest.store server
 $ git remote add chest https://app.chest.store/git/$YOUR_USERNAME/redis
@@ -83,15 +83,15 @@ $ # when prompted, authenticate with your chest.store username and password</cod
                             <li>Have a way to update files in the cloud and easily track changes to files via git repos and standard commands (i.e. <code>git log</code>)</li>
                             <li>Host your own git server for you and/or your team and control where your code lives</li>
                             <li>Have a place to easily create public links for others to access/download individual files and optionally password protect or expire them</li>
-                            <li>Have a way to interact with buckets &amp; objects/files across providers easily through <a href="https://github.com/cheststore/chest.store-cli" target="_blank" rel="noopener noreferrer">a CLI</a></li>
+                            <li>Have a way to interact with buckets &amp; objects/files across providers easily through <a href="https://github.com/cheststore/cli" target="_blank" rel="noopener noreferrer">a CLI</a></li>
                             <li>Have a solution to easily query and pull down files from cloud providers to slack (slackbot coming soon)</li>
                         </ul>
                     </div>
                     <div class="col-lg-6 mb-4">
                         <h4 class="text-danger"><i class="fa fa-times-circle"></i> Poor Use Cases</h4>
                         <ul class="text-left mb-0">
-                            <li>Sync buckets with tens of millions+ log files to try and run full text search against</li>
-                            <li>Integrate buckets across cloud providers with tens of millions+ objects to run ML jobs against</li>
+                            <li>Perform full text search on tens of millions+ log files in chest.store</li>
+                            <li>Train ML models against tens of millions+ objects from chest.store</li>
                             <li>Stream movies from files that live in cloud storage</li>
                         </ul>
                     </div>
@@ -184,6 +184,38 @@ $ # when prompted, authenticate with your chest.store username and password</cod
                         </div>
                     </div>
                 </div>
+                <!-- Project Three Row-->
+                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                    <div class="col-lg-6 d-flex align-items-flex">
+                        <pre class="small d-flex align-items-flex"><code class="sh small p-3">$ npm install -g @cheststore/cli
+$ chest ls
+BUCKET                 ID                                   FULL_PATH                                                             NAME                                           
+(aws) test.chest.store 30bf63bd-163b-4f0c-a83c-849c3f7103d9 .chest.store.git/test/1cdcb69b-5984-465e-a93c-e868a889941d.git.tar.gz 1cdcb69b-5984-465e-a93c-e868a889941d.git.tar.gz
+(aws) test.chest.store f95fc6e3-73ee-4353-a74a-f7faa5a53ffc .chest.store.git/test/41507658-5a3a-4013-98a7-16ec18db50a8.git.tar.gz 41507658-5a3a-4013-98a7-16ec18db50a8.git.tar.gz
+(aws) test.chest.store e85dee05-9195-49cb-862e-dd03fd07efc0 .chest.store.git/test/chest.store.git.tar.gz                          chest.store.git.tar.gz                         
+(aws) test.chest.store c92e7ed2-fd94-4803-bf09-81adf561bdec .chest.store.git/test/chest.store-website.git.tar.gz                  chest.store-website.git.tar.gz                 
+(aws) test.chest.store 5929907c-a29b-45de-b40b-e4e1f3c05ca7 LICENSE                                                               LICENSE                                        
+(aws) test.chest.store 701de8ee-5ddb-41bb-9818-16e647c8480e .chest.store.git/test/359cea9e-915c-4736-a49b-00812b1a534a.git.tar.gz 359cea9e-915c-4736-a49b-00812b1a534a.git.tar.gz
+
+$ chest ls README
+BUCKET                 ID                                   FULL_PATH       NAME           
+(aws) test.chest.store 199cd6fd-8e92-450e-9306-03bede8c0a42 README.md       README.md      
+
+$ chest download 199cd6fd-8e92-450e-9306-03bede8c0a42
+Successfully downloaded file to README.md</code></pre>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bg-yellow text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-primary"><a href="https://github.com/cheststore/cli" target="_blank" rel="noopener noreferrer">Command Line Interface</a></h4>
+                                    <p class="mb-0 text-black">Easy to install and use <a href="https://github.com/cheststore/cli" target="_blank" rel="noopener noreferrer">CLI</a> interface to make all your objects manageable and portable regardless of the machine you're on.</p>
+                                    <hr class="d-none d-lg-block mb-0 mr-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- Try it Out-->
@@ -206,7 +238,7 @@ $ # when prompted, authenticate with your chest.store username and password</cod
                                 </div>
                                 <div class="small">
                                     <div class="my-3">
-                                        <strong>P.S. This instance's database <a href="https://github.com/cheststore/wipe-test" target="_blank" rel="noopener noreferrer">resets every few hours</a>, so keep in mind any uploads or git pushes you make will be wiped clean at each refresh.</strong>
+                                        <strong>P.S. This instance's database <a href="https://github.com/cheststore/wipe-test-instance" target="_blank" rel="noopener noreferrer">resets every few hours</a>, so keep in mind any uploads or git pushes you make will be wiped clean at each refresh.</strong>
                                     </div>
                                     <div><i>P.P.S. This test instance is running on a t2.micro in AWS, so could easily get overloaded if too many people are in it at once. I'll do my best to keep this up, running, and healthy at all times and will upgrade to a bigger instance if traffic consistently stays high.</i></div>
                                 </div>
@@ -222,7 +254,7 @@ $ # when prompted, authenticate with your chest.store username and password</cod
                 <div class="row">
                     <div class="col-md-10 col-lg-8 mx-auto text-center">
                         <i class="far fa-paper-plane fa-2x mb-2 text-primary"></i>
-                        <h2 class="text-primary mb-5">Subscribe to receive updates!</h2>
+                        <h2 class="text-primary mb-5">Interested in a hosted offering? Sign up here and we'll update you when we are up and running!</h2>
                         <form id="signup-form" action="https://formspree.io/mqkyqwze" method="POST">
                             <div class="form-group"><input class="form-control" id="signup-email" type="email" name="email" placeholder="Enter email address..." /></div>
                             <div class="form-group"><textarea class="form-control" id="signup-notes" name="notes" placeholder="Any additional information you'd like us to know?"></textarea></div>
